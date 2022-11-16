@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="iamsobad" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-FPR118VN\SQLEXPRESS;Initial Catalog=iamsobad;Integrated Security=True" SettingsObjectName="iamsobad6.Properties.Settings" SettingsPropertyName="iamsobadConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.StudentList" Member="StudentList">
+    <Type Name="StudentList">
+      <Column Name="id_student" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="FIO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_grupp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Subject" Member="Subject">
+    <Type Name="Subject">
+      <Column Name="id_subject" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="name_subject" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.GetStudentById" Method="GetStudentById">
+    <Parameter Name="stId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="GetStudentByIdResult">
+      <Column Name="id_student" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_grupp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetStudentByFIO" Method="GetStudentByFIO">
+    <Parameter Name="stName" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetStudentByFIOResult">
+      <Column Name="id_student" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FIO" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="id_grupp" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.GetSubject" Method="GetSubject">
+    <Parameter Name="subName" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="GetSubjectResult">
+      <Column Name="id_subject" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="name_subject" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
